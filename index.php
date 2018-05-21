@@ -22,6 +22,7 @@ function match($c1, $c2){
 	catch(Exception $ex){
 		
 		echo "Something wrong with first team. ".$ex->getMessage()." \n\r";
+		return [-1, -1];
 
 	}
 	
@@ -33,12 +34,13 @@ function match($c1, $c2){
 	catch(Exception $ex){
 
 		echo "Something wrong with second team. ".$ex->getMessage()." \n\r";
+		return [-1, -1];
 
 	}
 
 	$luck = initLuck();
 	$winner = getWinner($firstTeamPotential, $secondTeamPotential, $luck);
-	$scores = getScores($firstTeamPotential,$secondTeamPotential,$luck,$winner);
+	$scores = getScores($firstTeamPotential, $secondTeamPotential, $winner);
 	
 	if($isDebug){
 		switch ($winner){

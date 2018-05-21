@@ -96,11 +96,10 @@ function getWinner($firstTeamPotential, $secondTeamPotential, $luck){
 * What scores will get both team
 * @param array(mixed) - potential of first team
 * @param array(mixed) - potential of second team
-* @param array(float) - luck
 * @param int - who is the winner
 * @return array(int) - teams scores
 **/
-function getScores($firstTeamPotential,$secondTeamPotential,$luck,$winner){
+function getScores($firstTeamPotential, $secondTeamPotential, $winner){
 	$firstTeamScoreCoeff = $firstTeamPotential['scoreChance'] + $secondTeamPotential['skipedChance'];
 	$secondTeamScoreCoeff = $secondTeamPotential['scoreChance'] + $firstTeamPotential['skipedChance'];
 	$coeffDifference = ceil(abs($firstTeamScoreCoeff-$secondTeamScoreCoeff));
